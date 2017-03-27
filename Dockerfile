@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && chmod +x /tmp/genymotion-2.8.1_x64.bin \
     && apt-get update \
     && apt-get install -y --force-yes virtualbox-5.1 \
-    && echo 'Y' | /tmp/genymotion-${GENY_VERSION}-linux_x64.bin \
+    && echo 'Y' | /tmp/genymotion-2.8.1_x64.bin \
     && ln -s /opt/genymotion/genymotion/genymotion /usr/bin/genymotion \
     && ln -s /opt/genymotion/genymotion/genymotion-shell /usr/bin/genymotion-shell \
     && ln -s /opt/genymotion/genymotion/gmtool /usr/bin/gmtool \
