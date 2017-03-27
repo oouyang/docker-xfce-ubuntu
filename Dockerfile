@@ -1,5 +1,7 @@
 from ubuntu:16.04
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND noninteractive 
+ENV JAVA_HOME  /usr/lib/jvm/java-8-openjdk-amd64
+ENV MAVEN_HOME /usr/share/maven
 
 RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-generic dkms xfce4 \
                                          vnc4server openssl libgstreamer-plugins-base0.10-dev \
@@ -12,9 +14,9 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && apt-get update \
     && apt-get install -y virtualbox-5.1 \
     && echo 'Y' | /tmp/genymotion-2.8.1_x64.bin \
-    && ln -s /opt/genymotion/genymotion/genymotion /usr/bin/genymotion \
-    && ln -s /opt/genymotion/genymotion/genymotion-shell /usr/bin/genymotion-shell \
-    && ln -s /opt/genymotion/genymotion/gmtool /usr/bin/gmtool \
+    && ln -s /opt/genymobile/genymotion/genymotion /usr/bin/genymotion \
+    && ln -s /opt/genymobile/genymotion/genymotion-shell /usr/bin/genymotion-shell \
+    && ln -s /opt/genymobile/genymotion/gmtool /usr/bin/gmtool \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
   
