@@ -19,5 +19,7 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && ln -s /opt/genymobile/genymotion/gmtool /usr/bin/gmtool \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+ADD .config /root/.config
   
 CMD startxfce4

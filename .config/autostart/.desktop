@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Main Console
+Comment=Run a terminal in the background
+Exec=/opt/Genymobile/Genymotion/genymotion
+StartupNotify=false
+Terminal=false
+Hidden=false
+OnlyShowIn=GNOME;XFCE;LXDE;
+X-GNOME-Autostart-enabled=true
