@@ -9,7 +9,7 @@ ENV YARN_VERSION 0.21.3
 RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-generic dkms xfce4 \
                                          vnc4server openssl libgstreamer-plugins-base0.10-dev \
                                          libxcomposite-dev libxslt1.1 default-jdk openssh-client \
-                                         maven git \
+                                         maven git android-tools-adb android-tools-fastboot \
     && echo deb http://download.virtualbox.org/virtualbox/debian xenial contrib >> /etc/apt/sources.list.d/virtualbox.list \
     && wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add - \
     && wget -P /tmp https://dl.genymotion.com/releases/genymotion-2.8.1/genymotion-2.8.1_x64.bin \
