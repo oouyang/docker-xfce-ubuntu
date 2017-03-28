@@ -41,7 +41,7 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && wget -P /tmp "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
     && gpg --batch --decrypt --output /tmp/SHASUMS256.txt /tmp/SHASUMS256.txt.asc \
     && grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" /tmp/SHASUMS256.txt | sha256sum -c - \
-    && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
+    && tar -xJf "/tmp/node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
     && wget -P /tmp "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-legacy-$YARN_VERSION.js" \
     && wget -P /tmp "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-legacy-$YARN_VERSION.js.asc" \
