@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && ln -s /opt/genymobile/genymotion/genymotion /usr/bin/genymotion \
     && ln -s /opt/genymobile/genymotion/genymotion-shell /usr/bin/genymotion-shell \
     && ln -s /opt/genymobile/genymotion/gmtool /usr/bin/gmtool \
+    && ln -s /opt/genymobile/genymotion/player /usr/bin/player \
     && apt-get clean \
     && groupadd --gid 1000 node \
     && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
@@ -45,6 +46,7 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
     && chmod +x /usr/local/bin/yarn \
     && npm install -g appium appium-doctor \
     && npm install wd \
+    && mkdir -p /root/.Genymobile/Genymotion \
     && rm -rf /var/lib/apt/lists/*
 
 ADD .config /root/.config
