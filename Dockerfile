@@ -38,14 +38,9 @@ RUN apt-get update && apt-get install -y wget bzip2 linux-headers-4.4.0-22-gener
         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
       done \
     && wget -P /tmp "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
-    && wget -P /tmp "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
-    && gpg --batch --decrypt --output /tmp/SHASUMS256.txt /tmp/SHASUMS256.txt.asc \
-    && grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" /tmp/SHASUMS256.txt | sha256sum -c - \
     && tar -xJf "/tmp/node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
     && wget -P /tmp "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-legacy-$YARN_VERSION.js" \
-    && wget -P /tmp "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-legacy-$YARN_VERSION.js.asc" \
-    && gpg --batch --verify /tmp/yarn-legacy-$YARN_VERSION.js.asc /tmp/yarn-legacy-$YARN_VERSION.js \
     && mv /tmp/yarn-legacy-$YARN_VERSION.js /usr/local/bin/yarn \
     && chmod +x /usr/local/bin/yarn \
     && npm install -g appium appium-doctor \
